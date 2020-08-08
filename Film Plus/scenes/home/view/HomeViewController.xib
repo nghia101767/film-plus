@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GMV_DIN_Pro-Bold.ttf">
+            <string>GMVDINPro-Bold</string>
+        </array>
+        <array key="GMV_DIN_Pro.ttf">
+            <string>GMVDINPro</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Film_Plus" customModuleProvider="target">
+            <connections>
+                <outlet property="btnNow" destination="iv8-si-GOj" id="LVC-6R-jPO"/>
+                <outlet property="btnRecent" destination="gn9-Li-No9" id="8eu-ea-aSV"/>
+                <outlet property="collectionFilm" destination="yrA-7i-uMI" id="NTX-5L-qAn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-iZ-PcP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iv8-si-GOj">
+                            <rect key="frame" x="50" y="0.0" width="35" height="50"/>
+                            <fontDescription key="fontDescription" name="GMVDINPro-Bold" family="GMV DIN Pro" pointSize="17"/>
+                            <state key="normal" title="Now">
+                                <color key="titleColor" name="textPrimary"/>
+                            </state>
+                            <connections>
+                                <action selector="doNow:" destination="-1" eventType="touchUpInside" id="3Nu-50-rrQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gn9-Li-No9">
+                            <rect key="frame" x="115" y="0.0" width="67" height="50"/>
+                            <fontDescription key="fontDescription" name="GMVDINPro" family="GMV DIN Pro" pointSize="17"/>
+                            <state key="normal" title="Recently">
+                                <color key="titleColor" name="textPrimary"/>
+                            </state>
+                            <connections>
+                                <action selector="doRecent:" destination="-1" eventType="touchUpInside" id="N8i-vd-2O4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="gn9-Li-No9" secondAttribute="bottom" id="3kO-8K-TIg"/>
+                        <constraint firstAttribute="bottom" secondItem="iv8-si-GOj" secondAttribute="bottom" id="Ntu-6n-hJR"/>
+                        <constraint firstItem="iv8-si-GOj" firstAttribute="leading" secondItem="w9f-iZ-PcP" secondAttribute="leading" constant="50" id="VQq-Vt-O6h"/>
+                        <constraint firstItem="gn9-Li-No9" firstAttribute="leading" secondItem="iv8-si-GOj" secondAttribute="trailing" constant="30" id="dOo-qZ-RSu"/>
+                        <constraint firstAttribute="height" constant="50" id="fcK-5N-lLN"/>
+                        <constraint firstItem="iv8-si-GOj" firstAttribute="top" secondItem="w9f-iZ-PcP" secondAttribute="top" id="q5v-JW-bzH"/>
+                        <constraint firstItem="gn9-Li-No9" firstAttribute="top" secondItem="iv8-si-GOj" secondAttribute="top" id="zsa-Kx-Po7"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yrA-7i-uMI">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a7g-6M-qec">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" name="primaryBg"/>
+            <constraints>
+                <constraint firstItem="w9f-iZ-PcP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="C2F-pe-Iud"/>
+                <constraint firstItem="w9f-iZ-PcP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FWu-fz-c0L"/>
+                <constraint firstItem="yrA-7i-uMI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ITG-lb-hU3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yrA-7i-uMI" secondAttribute="bottom" id="RXQ-77-20h"/>
+                <constraint firstItem="w9f-iZ-PcP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vnf-2T-tlu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yrA-7i-uMI" secondAttribute="trailing" id="b7X-rx-A5z"/>
+                <constraint firstItem="yrA-7i-uMI" firstAttribute="top" secondItem="w9f-iZ-PcP" secondAttribute="bottom" id="lNV-59-SR2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="151"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="primaryBg">
+            <color red="0.090196078431372548" green="0.090196078431372548" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textPrimary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
